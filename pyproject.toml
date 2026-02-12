@@ -1,0 +1,16 @@
+[project]
+name = "ai-financer"
+version = "1.0.0"
+description = "Production-grade NLQ-to-SQL Agent for mortgage and credit analytics"
+authors = [{ name = "Sai Santhosh V C" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

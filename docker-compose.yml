@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - FRED_API_KEY=${FRED_API_KEY:-}
+      - DATABASE_URL=sqlite:///./data/analytics.db
+    volumes:
+      - ./data:/app/data
+    command: >
+      sh -c "
+        python scripts/init_db.py 2>/dev/null || true &&
+        python scripts/ingest_data.py 2>/dev/null || true ||
+        true &&
+        python run.py
+      "

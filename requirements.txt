@@ -1,0 +1,31 @@
+# AI-Financer NLQ-to-SQL Agent - Production Dependencies
+# Author: Sai Santhosh V C | MIT License
+
+# Web Framework & API
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.12
+
+# LLM & Orchestration (compatible versions)
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+
+# Embeddings & Vector Store
+sentence-transformers>=3.0.0
+chromadb>=0.5.0
+numpy>=2.0.0,<3
+
+# Database & Data
+sqlalchemy>=2.0.0
+pandas>=2.0.0
+httpx>=0.27.0
+aiohttp>=3.9.0
+
+# Data sources - FRED API
+fredapi>=0.5.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
